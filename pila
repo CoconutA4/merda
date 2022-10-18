@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <ctype.h>
+#include <string.h>
+
+int main() {
+
+    int nif, par_sapato, valor_final, valor_mao_obra;
+    const int custo_concecao = 5, custo_associados_par = 3;
+    float margem_lucro, custo_total;
+    const float lucro = 0.3, desconto = 0.1;
+
+
+    printf("Please, enter your NIF: ");
+    scanf("%d", &nif);
+
+    printf("Please, enter the number of pairs of shoes: ");
+    scanf("%d", &par_sapato);
+
+    valor_mao_obra = ((2*custo_concecao))*par_sapato;
+    custo_total = (valor_mao_obra + custo_associados_par + lucro*(valor_mao_obra + custo_associados_par));
+    margem_lucro = ((valor_mao_obra +custo_associados_par)*lucro);
+    valor_final = (custo_total -  (custo_total*desconto));
+
+    printf("The NIF is: %d, and the total number of shoes is: %d\n", nif, 2*par_sapato);
+    printf("The hand work costs: %d, and the total cost is: %.2f\n", valor_mao_obra, custo_total);
+    printf("The lucrative margin is: %.2f, and the total discount: %.2f\n",margem_lucro , desconto*custo_total);
+    printf("The final price is: %d",valor_final);
+
+    
+}
+
+
